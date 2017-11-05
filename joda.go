@@ -5,15 +5,13 @@ import (
 )
 
 func Format(joda string) (goda string) {
+
+	// mapping of values
 	damap := map[string]string{
 		"y":    "06",
 		"Y":    "2006",
-		"MMMM": "January",
-		"MMM":  "Jan",
-		"MM":   "01",
-		"M":    "1",
-		"EE":   "Tuesday",
-		"E":    "Tue",
+		"dd":   "02",
+		"d":    "2",
 		"ee":   "02",
 		"e":    "2",
 		"hh":   "03",
@@ -24,13 +22,49 @@ func Format(joda string) (goda string) {
 		"ss":   "05",
 		"s":    "5",
 		"S":    ".0",
-		"a":    "PM",
-		"z":    "MST",
 		"Z":    "-0700",
+		"a":    "pm",
+		"z":    "MST",
+		"MMMM": "January",
+		"MMM":  "Jan",
+		"MM":   "01",
+		"M":    "1",
+		"EE":   "Monday",
+		"E":    "Mon",
 	}
+
+	// order of mapping
+	order := []string{
+		"y",
+		"Y",
+		"dd",
+		"d",
+		"ee",
+		"e",
+		"hh",
+		"h",
+		"H",
+		"mm",
+		"m",
+		"ss",
+		"s",
+		"S",
+		"Z",
+		"a",
+		"z",
+		"MMMM",
+		"MMM",
+		"MM",
+		"M",
+		"EE",
+		"E",
+	}
+
+	// run through and replace
 	goda = joda
-	for j, g := range damap {
-		goda = strings.Replace(goda, j, g, -1)
+	for i, _ := range order {
+		goda = strings.Replace(goda, order[i], damap[order[i]], -1)
 	}
 	return goda
+
 }
