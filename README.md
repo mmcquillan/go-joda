@@ -10,14 +10,12 @@ This library tries to use a more familiar method of specifying formats for dates
 ```
 Two digit year              y       06
 Four digit year             Y       2006
-Two digit month             dd      02
-Single digit month          d       2
-Two digit day of month      ee      02
-Single digit day of month   e       2
 Long month name             MMMM    January
 Short month name            MMM     Jan
 Two digit month             MM      01
 Single digit month          M       1
+Two digit day of month      dd      02
+Single digit day of month   d       2
 Long day of week            EE      Monday
 Short day of week           E       Mon
 Two digit 12 hours          hh      03
