@@ -32,3 +32,21 @@ AM/PM                       a       pm
 Time Zone                   z       MST
 Time Zone offset            Z       -0700
 ```
+
+Example:
+```
+package main
+
+import(
+  "fmt"
+  "time"
+
+  "github.com/mmcquillan/joda"
+)
+
+func main() {
+  t := time.Now()
+  f := joda.Format("Y-MM-ee H:mm:ssZ")
+  fmt.Println(t.Format(f))
+}
+```
