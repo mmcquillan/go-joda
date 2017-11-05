@@ -44,7 +44,7 @@ import(
 
 func main() {
   t := time.Now()
-  f := joda.Format("Y-MM-ee H:mm:ssZ")
+  f := joda.Format("Y-MM-dd H:mm:ssZ")
   fmt.Println(t.Format(f))
 }
 ```
